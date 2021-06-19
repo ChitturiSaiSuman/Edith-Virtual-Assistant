@@ -1,0 +1,11 @@
+1. Greet the user
+2. Ask what it should do
+3. If there is no response for 5s - go to sleep -> squeeze again to wake it up
+4. Record voice - NLP (using API) - Respond using API
+    Operations supported:
+    * Offline/Online Music Playback
+    * Reminder Application - Add, delete, modify memos - supports voice based interaction
+    * Optional - Weather, News, Sports updates
+
+5. Prompt for further service ? - If yes - start from 2 otherwise go to sleep.
+
