@@ -1,18 +1,22 @@
-# importing requests package
+# Reads out News Headlines from BBC
 import requests
-import time
-from gtts import gTTS
-from playsound import  playsound
+import gtts
+import playsound
+import os
+
 def NewsFromBBC():
 	
 	# BBC news api
-	# following query parameters are used
+	# Following query parameters are used
 	# source, sortBy and apiKey
+
 	query_params = {
 	"source": "bbc-news",
 	"sortBy": "top",
-	"apiKey": "07f766d391d946aa9582e87a1f3dd9ae"
+	"apiKey": "<Your API Key>"
 	}
+
+	# URL of News API
 	main_url = " https://newsapi.org/v1/articles"
 
 	# fetching data in json format
@@ -31,12 +35,14 @@ def NewsFromBBC():
 		
 	for i in range(len(results)):
 		
-		# printing all trending news
-		print(i + 1, results[i])
-		myobj=gTTS(text=results[i],lang='en')
-		myobj.save("welcome1.mp3")
-		playsound("welcome1.mp3")
+		# Convert Text to Speech using Google Text-to-speech Engine
+		myobj = gtts.gTTS(text = results[i], lang = 'en')
 
-# Driver Code
-if __name__ == '__main__':
-	NewsFromBBC()
+		# Save it in Mp3 Format
+		myobj.save("News.mp3")
+
+		# Play the music file
+		playsound.playsound("News.mp3")
+
+		# Remove the music file after reading
+		os.system("rm News.mp3")

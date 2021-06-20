@@ -49,6 +49,8 @@ except (SystemError, ImportError):
     import browser_helpers
     import device_helpers
 
+from Play_Music import play_song
+from News import NewsFromBBC
 
 ASSISTANT_API_ENDPOINT = 'embeddedassistant.googleapis.com'
 END_OF_UTTERANCE = embedded_assistant_pb2.AssistResponse.END_OF_UTTERANCE
@@ -155,11 +157,13 @@ class SampleAssistant(object):
                     self.conversation_stream.stop_recording()
                     self.conversation_stream.start_playback()
                     logging.info('Playing assistant response.')
-                    if "play" in user_transcripts[0]:
+                    if "news" in user_transcripts[0]:
+                        NewsFromBBC()
+                        exit(0)
+                    elif "play" in user_transcripts[0]:
                         song_name = user_transcripts[0][5:]
                         song_name = song_name.replace(" ", "+")
-                        os.system("python3 /home/suman/Automation_Scripts/music.py " + song_name)
-                        exit(0)
+                        play_song(song_name)
                     else:
                         self.conversation_stream.write(resp.audio_out.audio_data)
                 self.conversation_stream.write(resp.audio_out.audio_data)
