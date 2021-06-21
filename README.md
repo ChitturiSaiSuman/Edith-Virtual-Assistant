@@ -24,7 +24,7 @@ python3 Engine.py
 
 ## 3. Dependencies
 
-* Finish setting up [Google Voice Assistant API](https://developers.google.com/assistant/sdk/guides/service/python) on your device before using this script.
+* Finish setting up [Google Voice Assistant API](https://developers.google.com/assistant/sdk/guides/service/python) on your device before using this application.
 * For the News feature to work, get an API Key from [News API](https://newsapi.org/) and replace the ```<Your API Key>``` snippet in ```News.py``` with the API key.
 * Install necessary modules before launching the application.
 
