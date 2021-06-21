@@ -9,10 +9,6 @@ import urllib.parse     # To encode URLs
 import subprocess       # To Play song on Chrome
 import time             # For sleep
 
-def write_to_file(msg):
-    with open("buffer.txt", "w") as file:
-        file.write(msg)
-
 def play_song(msg):
 
     # song name from user
@@ -38,5 +34,4 @@ def play_song(msg):
     time.sleep(length + 5)
 
     # Terminate the Chrome session
-    write_to_file("closed")
     os.killpg(os.getpgid(pid), signal.SIGTERM)
