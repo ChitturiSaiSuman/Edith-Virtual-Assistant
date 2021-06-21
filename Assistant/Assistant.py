@@ -160,7 +160,7 @@ class SampleAssistant(object):
                     if "news" in user_transcripts[0]:
                         NewsFromBBC()
                         exit(0)
-                    elif "play" in user_transcripts[0]:
+                    elif "play" in user_transcripts[0] and "game" not in user_transcripts[0]:
                         song_name = user_transcripts[0][5:]
                         song_name = song_name.replace(" ", "+")
                         play_song(song_name)
