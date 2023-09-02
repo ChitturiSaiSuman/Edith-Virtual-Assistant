@@ -10,7 +10,7 @@ Co-Developer: @github.com/300-iq
 
 ## 1. Introduction
 
-Edith is a Virutal Assistant which is capable of Voice Interaction, Music Playback, making to-do lists, telling Facts/News and setting Alarms/Reminders.
+Edith is a Virtual Assistant which is capable of Voice Interaction, Music Playback, making to-do lists, telling Facts/News and setting Alarms/Reminders.
 
 
 ## 2. Usage
